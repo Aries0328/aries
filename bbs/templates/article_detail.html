@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+    <div class="article_info">
+        <h4 class="text-center">{{ article_obj.title }}</h4>
+        <div class="content">
+            {{ article_obj.content|safe }}
+        </div>
+        <div id="div_digg">
+            <div class="diggit">
+                <span class="diggnum" id="digg_count">{{ article_obj.up_count }}</span>
+            </div>
+            <div class="buryit">
+                <span class="burynum" id="bury_count">{{ article_obj.down_count }}</span>
+            </div>
+            <div class="clear"></div>
+            <div class="diggword" id="digg_tips">
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
