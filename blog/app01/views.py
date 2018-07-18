@@ -34,7 +34,6 @@ def login(request):
         code=request.POST.get("code")
 
         if code.upper() != request.session['random_code'].upper():
-            print(777777)
             return render(request,'login.html',{'msg':'验证码错误'})
         # 用户验证成功,返回user对象,否则返回None
         user=auth.authenticate(username=user,password=pwd)
